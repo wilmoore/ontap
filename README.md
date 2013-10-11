@@ -15,7 +15,7 @@
 
 ![](https://cloudup.com/cwHITIlHPzf+)
 
-## Go
+## Grab everything that is on tap
 
     % ontap
 
