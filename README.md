@@ -7,7 +7,7 @@
     % curl -sSL https://raw.github.com/wilmoore/ontap/master/ontap.sh > /tmp/ontap.sh
     % source /tmp/ontap.sh
 
-**NOTE**: optionally; you could also put `ontap.sh` somewhere a little more permanent and `source` it via your `.bashrc` or `.zshrc`.
+**NOTE**: optionally, put `ontap.sh` somewhere a little more permanent and `source` it via your `.bashrc` or `.zshrc`.
 
 ## Configure
 
