@@ -1,4 +1,4 @@
-# A way to remember and install your favorite brews
+# Automate your favorite taps and brews
 
 `ontap` reads your `~/.ontaprc` and installs/taps whatever you've listed therein.
 
