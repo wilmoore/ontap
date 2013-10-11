@@ -10,6 +10,9 @@ function ontap {
 
     "")
 
+      # $ONTAPRC should exist; otherwise, noop
+      [[ -e "$ONTAPRC" ]] || ONTAPRC=/dev/null
+
       while read line; do 
 
         # skip commented or blank lines
