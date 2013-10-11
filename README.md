@@ -15,6 +15,8 @@
 
 ![](https://cloudup.com/ceBATd5bKAu+)
 
+[https://github.com/wilmoore/dotfiles/blob/master/active/.ontaprc](https://github.com/wilmoore/dotfiles/blob/master/active/.ontaprc)
+
 ## Grab everything that is on tap
 
     % ontap
