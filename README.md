@@ -1,4 +1,4 @@
-# Save and install homebrew formulae and taps
+# Automate homebrew formulae and taps
 
 `ontap` reads your `~/.ontaprc` and takes action on any `install FORMULA` or `tap REPO` lines it finds.
 
