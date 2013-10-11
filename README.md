@@ -1,4 +1,4 @@
-## Declare and install homebrew formulae and taps via `~/.ontaprc`
+## Declare and install homebrew formulae and taps
 
 `ontap` reads your `~/.ontaprc` and takes action on any `install FORMULA` or `tap REPO` lines it finds.
 
