@@ -1,6 +1,6 @@
 # Automate your favorite taps and brews
 
-`ontap` reads your `~/.ontaprc` and installs/taps whatever you've listed therein.
+`ontap` reads your `~/.ontaprc` and takes action on any `install FORMULA` or `tap REPO` lines it finds.
 
 ## Install
 
