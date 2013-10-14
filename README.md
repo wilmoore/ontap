@@ -1,6 +1,6 @@
 # Save and install homebrew formulae and taps
 
-`ontap` reads your `~/.ontaprc` and takes action on any `install FORMULA` or `tap REPO` lines it finds.
+`ontap` reads your `~/.ontaprc` and takes action on any `install FORMULA`, `unlink FORMULA` or `tap REPO` lines it finds.
 
 ## Install
 
@@ -13,9 +13,9 @@
 
     % $EDITOR ~/.ontaprc
 
-![](https://cloudup.com/ceBATd5bKAu+)
+![](https://cloudup.com/cURLdBDcAWG+)
 
-[https://github.com/wilmoore/dotfiles/blob/master/active/.ontaprc](https://github.com/wilmoore/dotfiles/blob/master/active/.ontaprc)
+[example ~/.ontaprc](https://github.com/wilmoore/dotfiles/blob/master/active/.ontaprc)
 
 ## Grab everything that is on tap
 
