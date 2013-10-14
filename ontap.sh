@@ -1,7 +1,7 @@
 function ontap {
 
   local APPNAME='ontap'
-  local VERSION='0.0.1'
+  local VERSION='0.1.0'
   local ONTAPRC=~/.ontaprc
   local CURYEAR='2013'
 
@@ -13,6 +13,9 @@ function ontap {
       # $ONTAPRC should exist; otherwise, noop
       [[ -e "$ONTAPRC" ]] || ONTAPRC=/dev/null
 
+      # update first
+      brew update
+
       while read line; do 
 
         # skip commented or blank lines
@@ -20,13 +23,26 @@ function ontap {
         [[ "$line" =~ ^\s?$ ]] && continue
 
         # parse line
-        local command=$(echo $line | cut -d" " -f1)
-        local formula=$(echo $line | cut -d" " -f2)
-        local taprepo=$formula
+        local command="$(echo $line | awk '{ print $1 }')"
+        local formula="$(echo $line | awk '{ print $2 }')"
+        local taprepo="$formula"
+        local options="$(echo $line | awk '{$1=$2=""; print}' | xargs)"
 
         # install
         if [[ "$command" = "install" ]]; then
-          brew install "$formula"
+          
+          if [[ -n "$options" ]]; then
+            brew install $formula $options
+          else
+            brew install "$formula"
+          fi
+
+          continue
+        fi
+
+        # unlink
+        if [[ "$command" = "unlink" ]]; then
+          brew unlink "$formula"
           continue
         fi
 
@@ -37,6 +53,10 @@ function ontap {
             continue
           brew tap "$taprepo"
         fi
+
+        # command not supported
+        printf "\e[4;31m%s\e[0m: %s\n" "Error" "$command not supported"
+        return 1
 
       done <$ONTAPRC
 
