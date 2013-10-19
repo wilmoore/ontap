@@ -30,7 +30,7 @@ function ontap {
 
         # install
         if [[ "$command" = "install" ]]; then
-          
+
           if [[ -n "$options" ]]; then
             brew install $formula $options
           else
