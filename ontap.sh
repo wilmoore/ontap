@@ -13,8 +13,11 @@ function ontap {
       # $ONTAPRC should exist; otherwise, noop
       [[ -e "$ONTAPRC" ]] || ONTAPRC=/dev/null
 
-      # update first
+      # update formulae
       brew update
+
+      # upgrade to avoid install errors (plus it's a good idea anyhow)
+      brew upgrade
 
       while read line; do 
 
