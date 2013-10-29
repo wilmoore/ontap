@@ -40,6 +40,18 @@ function ontap {
           continue
         fi
 
+        # cask-install
+        if [[ "$command" = "cask-install" ]]; then
+
+          if [[ -n "$options" ]]; then
+            brew cask install $formula $options
+          else
+            brew cask install "$formula"
+          fi
+
+          continue
+        fi
+
         # unlink
         if [[ "$command" = "unlink" ]]; then
           brew unlink "$formula"
