@@ -19,7 +19,7 @@ function ontap {
       # upgrade to avoid install errors (plus it's a good idea anyhow)
       brew upgrade
 
-      while read line; do 
+      while read line; do
 
         # skip commented or blank lines
         [[ "$line" =~ ^\s?# ]] && continue
@@ -40,6 +40,7 @@ function ontap {
             brew install "$formula"
           fi
 
+          hash -r
           continue
         fi
 
@@ -52,12 +53,14 @@ function ontap {
             brew cask install "$formula"
           fi
 
+          hash -r
           continue
         fi
 
         # unlink
         if [[ "$command" = "unlink" ]]; then
           brew unlink "$formula"
+          hash -r
           continue
         fi
 
