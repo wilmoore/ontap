@@ -48,12 +48,20 @@ function ontap {
         if [[ "$command" = "cask-install" ]]; then
 
           if [[ -n "$options" ]]; then
-            brew cask install $formula $options
+            brew cask info $formula | grep -qE '^Not installed' && brew cask install $formula $options && contine
+            printf "\e[4;31m%s\e[0m: %s\n" "Warning" "$formula already installed" && continue
           else
-            brew cask install "$formula"
+            brew cask info $formula | grep -qE '^Not installed' && brew cask install "$formula" && continue
+            printf "\e[4;31m%s\e[0m: %s\n" "Warning" "$formula already installed" && continue
           fi
 
           hash -r
+          continue
+        fi
+
+        # cask-alfred
+        if [[ "$command" = "cask-alfred" ]]; then
+          brew cask alfred "$formula"
           continue
         fi
 
