@@ -5,6 +5,9 @@ function ontap {
   local ONTAPRC=~/.ontaprc
   local CURYEAR='2013'
 
+  echo 'This is deprecated...please use `brew bundle` or `brew bundle-dir` instead'
+  exit 1
+  
   # argument parsing
   case "$1" in
 
