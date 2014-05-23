@@ -1,5 +1,7 @@
 ## Declare and install homebrew formulae and taps
 
+> deprecated in favor of brew bundle and brew bundle-dir
+
 `ontap` reads your `~/.ontaprc` and takes action on any `install FORMULA`, `unlink FORMULA` or `tap REPO` lines it finds.
 
 ## Install
